@@ -1,0 +1,12 @@
+- name: OS Updates (Linux)
+  hosts: all
+  become: yes
+  tasks:
+    - name: install windows updates
+      win_updates:
+        category_names:
+          - SecurityUpdates
+
+    - name: reboot to complete update
+      reboot:
+        msg: rebooting to complete Updates
