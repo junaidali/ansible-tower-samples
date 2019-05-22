@@ -1,4 +1,4 @@
-- name: OS Updates (Linux)
+- name: OS Updates (Windows)
   hosts: all
   tasks:
     - name: install windows updates
