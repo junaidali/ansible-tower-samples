@@ -1,6 +1,5 @@
 - name: OS Updates (Linux)
   hosts: all
-  become: yes
   tasks:
     - name: install windows updates
       win_updates:
