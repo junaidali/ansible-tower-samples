@@ -1,0 +1,9 @@
+- name: Search OS Updates (Windows)
+  hosts: all
+  tasks:
+    - name: search windows updates
+      win_updates:
+        category_names:
+          - SecurityUpdates
+        state: searched
+        log_path: C:\ansible_wu.txt
