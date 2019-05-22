@@ -9,6 +9,11 @@
         log_path: C:\ansible_wu.txt
       register: wu
 
-    - name: output searched update information
+    - name: summary searched update information
       debug:
-        msg: "Found {{ wu.found_update_count }} updates that need to be installed. Details {{ wu. updates }}"
+        msg: "Found {{ wu.found_update_count }} updates that need to be installed."
+
+    - name: detail searched update information
+      debug:
+        msg: " {{ item.kb }} - {{ item.title }}"
+      with_items: "{{ wu.updates }}"
