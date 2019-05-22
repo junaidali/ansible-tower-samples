@@ -11,4 +11,4 @@
 
     - name: output searched update information
       debug:
-        msg: "Found {{ wu.found_update_count }} updates that need to be installed"
+        msg: "Found {{ wu.found_update_count }} updates that need to be installed. Details {{ wu. updates }}"
