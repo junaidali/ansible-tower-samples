@@ -7,3 +7,8 @@
           - SecurityUpdates
         state: searched
         log_path: C:\ansible_wu.txt
+      register: wu
+
+    - name: output searched update information
+      debug:
+        msg: "Found {{ wu.found_update_count }} updates that need to be installed"
