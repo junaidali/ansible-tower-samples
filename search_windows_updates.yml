@@ -5,8 +5,8 @@
       win_updates:
         category_names:
           - SecurityUpdates
+          - CriticalUpdates
         state: searched
-        log_path: C:\ansible_wu.txt
       register: wu
 
     - name: summary searched update information
@@ -15,5 +15,5 @@
 
     - name: detail searched update information
       debug:
-        msg: "{{ item }} - KB{{ wu.updates[item].kb[0] }} - {{ wu.updates[item].title }}" 
+        msg: "{{ item }} - KB{{ wu.updates[item].kb[0] }} - {{ wu.updates[item].title }}"
       with_items: "{{ wu.updates }}"
