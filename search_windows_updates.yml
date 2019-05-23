@@ -15,5 +15,5 @@
 
     - name: detail searched update information
       debug:
-        msg: " {{ item.title }}"
-      with_items: "{{ wu.updates.kb }}"
+        msg: "{{ item.key }} - KB{{ item.value.kb }} - {{ item.value.title }}" 
+      with_items: "{{ wu.updates }}"
